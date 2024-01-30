@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Fragment } from 'react';
+import { BrowserRouter } from 'react-router-dom';
+
+import CssBaseline from '@mui/material/CssBaseline';
+
+import { withErrorHandler } from '@/error-handling';
+import AppErrorBoundaryFallback from '@/error-handling/fallbacks/App';
+import Pages from '@/routes/Pages';
+import Header from '@/sections/Header';
+import HotKeys from '@/sections/HotKeys';
+import Notifications from '@/sections/Notifications';
+import SW from '@/sections/SW';
+import Sidebar from '@/sections/Sidebar';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      <CssBaseline />
+      <Notifications />
+      <HotKeys />
+      <SW />
+      <BrowserRouter>
+        <Header />
+        <Sidebar />
+        <Pages />
+      </BrowserRouter>
+    </Fragment>
   );
 }
 
-export default App;
+export default withErrorHandler(App, AppErrorBoundaryFallback);
