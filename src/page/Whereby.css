@@ -1,0 +1,17 @@
+.Container {
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+}
+
+.ButtonContainer {
+  flex-direction: row;
+  justify-content: space-around;
+  width: 80%;
+}
+
+.ButtonText {
+  color: "black";
+  font-size: 16px;
+}

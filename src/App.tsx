@@ -1,26 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "@whereby.com/browser-sdk/embed";
+import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Whereby } from "./page/Whereby";
+import { WherebyMeeting } from "./page/Whereby-meeting";
 
-function App() {
+import Zoom from "./page/Zoom";
+import Home from "./page/Home";
+
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/pwa_poc/" element={<Home />} />
+        <Route path="/pwa_poc/whereby" element={<Whereby />} />
+        <Route path="/pwa_poc/whereby-meeting" element={<WherebyMeeting />} />
+        <Route path="/pwa_poc/zoom" element={<Zoom />} />
+      </Routes>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
