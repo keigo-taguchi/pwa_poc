@@ -21,7 +21,7 @@ export const createMeeting = async (): Promise<MeetingUrl> => {
     return {
       meetingId: response.data.response.meetingId,
       hostRooUrl: response.data.response.hostRoomUrl,
-      guestRoomUrl: response.data.response.viewerRoomUrl,
+      guestRoomUrl: response.data.response.roomUrl,
     };
   } catch (error) {
     console.error("Whereby API エラー:", error);
@@ -46,5 +46,25 @@ export const deleteMeetingRooms = async (deleteId: string) => {
     console.error("Whereby API エラー:", error);
     return "";
     // setErrorMessage("ミーティングの作成に失敗しました。");
+  }
+};
+
+export const getMeetingRooms = async (meetingId: string) => {
+  try {
+    // APIリクエスト
+    const response = await axios.post(
+      WHEREBY_API_URL + `?meetingId=${meetingId}`,
+      {
+        headers: { "Content-Type": "application/json" },
+      }
+    );
+    if (response.status !== 200) {
+      throw new Error(response.data.error);
+    }
+    // レスポンスデータ
+    return response.data.response.roomUrl;
+  } catch (error) {
+    console.error("Whereby API エラー:", error);
+    return "";
   }
 };
