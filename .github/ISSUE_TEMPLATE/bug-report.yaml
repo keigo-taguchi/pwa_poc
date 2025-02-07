@@ -1,8 +1,8 @@
 name: バグ・不具合
 description: バグや不具合報告用テンプレート
 title: "[不具合] "
-labels: ''
-assignees: ''
+labels: ["bug", "triage"]
+assignees: ["octocat"]
 body:
   - type: markdown
     attributes:
