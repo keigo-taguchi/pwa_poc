@@ -1,0 +1,74 @@
+name: バグ・不具合
+description: バグや不具合報告用テンプレート
+title: "[不具合] "
+labels: ''
+assignees: ''
+body:
+  - type: markdown
+    attributes:
+      value: |
+        バグ報告を記入していただきありがとうございます！
+  - type: textarea
+    id: problem-overview
+    attributes:
+      label: 問題の概要
+      description: 問題の内容を簡潔に記載してください。スクショを貼ってもOKです。事前に実施した調査issueがあれば記載してください。
+      placeholder: 問題の概要を記入してください。
+    validations:
+      required: true
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: 期待値
+      description: 期待する動作や状態を記載してください。現段階で不明の場合はその旨を記載ください。
+      placeholder: 期待する動作を記入してください。
+    validations:
+      required: false
+  - type: textarea
+    id: qa-items
+    attributes:
+      label: QA項目
+      description: QA項目を記載してください。
+      placeholder: ここにQA項目を書く
+    validations:
+      required: false
+  - type: textarea
+    id: reproduction-steps
+    attributes:
+      label: 再現手順・発生条件
+      description: 再現手順の記載をお願いします。
+      placeholder: 再現手順を記入してください。
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: 環境
+      description: 問題を確認した環境を必要に応じて記載ください。
+      placeholder: 環境情報を記入してください。
+    validations:
+      required: false
+  - type: textarea
+    id: additional-info
+    attributes:
+      label: 補足・詳細説明
+      description: 補足情報や長くなりそうな詳細説明を記載してください。
+      placeholder: 補足情報を記入してください。
+    validations:
+      required: false
+  - type: textarea
+    id: close-conditions
+    attributes:
+      label: Close条件
+      description: Close条件を記載してください。
+      placeholder: Close条件を記入してください。
+    validations:
+      required: false
+  - type: textarea
+    id: related-links
+    attributes:
+      label: 関連Link
+      description: 関連記事のリンクや発見に至ったSlackのリンクを記載してください。
+      placeholder: 関連リンクを記入してください。
+    validations:
+      required: false
